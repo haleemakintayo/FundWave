@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+<div class="sign__body">
+  <!-- SignUp START -->
+  <div class="sign">
+    <div class="container-fluid p-0">
+      <div class="sign__layer">
+        <div class="d-md-flex justify-content-between position-relative h-100">
+          <div
+            class="col-11 col-sm-10 col-md-8 col-lg-5 col-xl-4 m-auto sign__position"
+          >
+            <div
+              class="sign__form"
+              style="margin-top: 20px; margin-bottom: 20px"
+            >
+              <h5 class="sign__small d-none d-lg-block">
+                Copyright © 2024 FundWave
+              </h5>
+
+              {% if messages %}
+              <div class="messages">
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+              </div>
+              {% endif %}
+
+              <form
+                method="POST"
+                id="signupForm"
+                action="{% url 'sign-up' %}"
+                novalidate
+              >
+                {% csrf_token %} {% for field in form %}
+                <div class="form-group sign__form-mb">
+                  {{ field.label_tag }} {{ field }} {% if field.errors %}
+                  <div class="invalid-feedback d-block">{{ field.errors }}</div>
+                  {% endif %} {% if field.help_text %}
+                  <small class="form-text text-muted">
+                    {{ field.help_text }}
+                  </small>
+                  {% endif %}
+                </div>
+                {% endfor %}
+
+                <button
+                  class="sign__btn sign__btn-in form-control"
+                  type="submit"
+                >
+                  Get Started
+                </button>
+                <div class="col-10 col-sm-12 m-auto">
+                  <div class=""></div>
+                </div>
+
+                <div class="">
+                  <p class="sign__text text-center">
+                    Already have an account?
+                    <a class="sign__form-link" href="{% url 'sign-in' %}">
+                      Log in
+                    </a>
+                  </p>
+                </div>
+              </form>
+              <!-- <form
+                action="{% url 'sign-up' %}"
+                method="POST"
+                class=""
+                id="signupForm"
+                novalidate
+              >
+                {% csrf_token %}
+                <h4 class="sign__form-heading">Sign up</h4>
+                <div class="">
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="firstNameInp"
+                      >First Name <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control sign__form-input"
+                      id="firstNameInp"
+                      name="first_name"
+                      type="text"
+                      placeholder="Enter your first name"
+                    />
+                    <div class="">
+                      <span
+                        class="sign__text sign__text-firstname text-danger d-none"
+                        >Use a valid first name</span
+                      >
+                      <span
+                        class="sign__text sign__text-firstname--required text-danger d-none"
+                        >First name is required</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="lastNameInp"
+                      >Last Name <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control sign__form-input"
+                      id="lastNameInp"
+                      name="last_name"
+                      type="text"
+                      placeholder="Enter your last name"
+                    />
+                  </div>
+
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="emailInp"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control sign__form-input"
+                      id="emailInp"
+                      name="email"
+                      type="email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="accountType"
+                      >Account Type <span class="text-danger">*</span></label
+                    >
+                    <select
+                      class="form-control sign__form-input"
+                      id="accountType"
+                      name="account_type"
+                    >
+                      <option value="">Select account type</option>
+                      <option value="creator">Campaign Creator</option>
+                      <option value="donator">Donator</option>
+                    </select>
+                    <div class="">
+                      <span
+                        class="sign__text sign__text-account--required text-danger d-none"
+                        >Please select an account type</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="passwordInp"
+                      >Password <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control sign__form-input"
+                      id="passwordInp"
+                      name="password"
+                      type="password"
+                      placeholder="Create a Password"
+                    />
+                  </div>
+
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="confirmPasswordInp"
+                      >Confirm Password
+                      <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control sign__form-input"
+                      id="confirmPasswordInp"
+                      name="confirm_password"
+                      type="password"
+                      placeholder="Confirm your password"
+                    />
+                    <div class="">
+                      <span
+                        class="sign__text sign__text-confirm-pass text-danger d-none"
+                        >Passwords do not match</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="col-10 col-sm-12 m-auto">
+                    <div class="">
+                      <button
+                        class="sign__btn sign__btn-in form-control"
+                        type="submit"
+                      >
+                        Get Started
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="">
+                    <p class="sign__text text-center">
+                      Already have an account?
+                      <a class="sign__form-link" href="{% url 'sign-in' %}">
+                        Log in
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </form> -->
+            </div>
+            <div class="">
+              <img
+                class="sign__card-element d-none d-xxl-block"
+                src="assets/img/element-4.png"
+                alt="image"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 d-none d-lg-block">
+            <div class="">
+              <div class="sign__slider">
+                <div class="sign__slider-item">
+                  <div class="card sign__card h-100">
+                    <img
+                      class="img-fluid h-100 sign__card-img"
+                      src="assets/img/signUp.png"
+                      alt="image"
+                    />
+                    <div class="card-img-overlay sign__card-overlay">
+                      <div class="position-relative">
+                        <h5
+                          class="global__heading global__heading-w sign__card-title"
+                        >
+                          Sign up for a charity account
+                        </h5>
+                        <p class="sign__card-p">
+                          Create an account to save and continue.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sign__slider-item">
+                  <div class="card sign__card h-100">
+                    <img
+                      class="img-fluid h-100 sign__card-img"
+                      src="assets/img/signIn.png"
+                      alt="image"
+                    />
+                    <img
+                      class="sign__card-element d-none d-lg-block"
+                      src="assets/img/element-4.png"
+                      alt="image"
+                    />
+                    <div class="card-img-overlay sign__card-overlay">
+                      <div class="position-relative">
+                        <h5
+                          class="global__heading global__heading-w sign__card-title"
+                        >
+                          Sign up for a charity account
+                        </h5>
+                        <p class="sign__card-p">
+                          Create an account to save and continue.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SignUp END -->
+</div>
+{% endblock %}

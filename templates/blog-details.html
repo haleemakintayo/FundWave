@@ -1,0 +1,207 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- GoUp START -->
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+    <!-- GoUp END -->
+
+   
+
+    <!--  Banner START -->
+
+    <div class="banner">
+        <div class="banner__overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-lg-start">
+                        <h1 class="global__title global__title-dark text-capitalize">blog detail</h1>
+                        <ul class="banner__ul">
+                            <li class="banner__ul-list p-0">
+                                <a class="banner__ul-link" href="{% url 'home' %}">
+                                    home
+                                </a>
+                            </li>
+                            <li class="banner__ul-list">
+                                blog details
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="banner__element d-none d-lg-block">
+                    <img src="{% static '/img/element-3.svg' %}" alt="image">
+                </div>
+                <div class="banner__polygon d-none d-lg-block">
+                    <img src="{% static '/img/polygon.svg' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Banner END -->
+
+    <!--  Blog_Detail START -->
+
+    <div class="blog global__py pt-0">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-8 text-center m-auto">
+                    <div class="mt-3">
+                        <div class="mt-5">
+                            <a href="{% url 'donate' %}" class="global__btn">Donation</a>
+                            <span class="global__text blog__detail-text">November 08, 2024</span>
+                        </div>
+                    </div>
+                    <h2 class="global__heading blog__detail-m">How to Donate on Giving Tuesday: 10 Ways to Help
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="blog__detail-head">
+                    <img class="img-fluid blog__detail-head--image" src="{% static '/img/fundwave.jpg' %}" alt="image">
+                    <div class="col-12">
+                        <div class="col-xl-8 m-auto position-relative">
+                            <h3 class="global__heading blog__detail-m blog__detail-head--heading">Many Children Are
+                                Suffering A Lot
+                                For Food.</h3>
+                            <div class="d-md-flex align-items-center">
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid blog__detail-head--user" src="{% static '/img/user-13.png' %}"
+                                        alt="image">
+                                    <div class="">
+                                        <h5 class="blog__detail-head--name">Darrell Steward</h5>
+                                        <p class="blog__detail-head--tag">Healthy Food</p>
+                                    </div>
+                                </div>
+                                <div class="mt-3 mt-md-0">
+                                    <ul class="blog__detail-head--list">
+                                        <li>10 min read</li>
+                                        <li>Last Update on 3rd Nov. 2024</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="d-flex mt-5">
+                                <!-- Blog_Deetail Social Left -->
+                                <div class="d-none d-lg-block position-absolute blog__detail-social">
+                                    <h4 class="blog__detail-social--text">share</h4>
+                                    <ul class="">
+                                        <li>
+                                            <a href="https://www.facebook.com/">
+                                                <i class="fa-brands fa-facebook blog__detail-social--fb"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://linkedin.com/">
+                                                <i class="fa-brands fa-linkedin blog__detail-social--in"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://twitter.com/">
+                                                <i class="fa-brands fa-twitter blog__detail-social--tw"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://www.instagram.com/">
+                                                <i class="fa-brands fa-square-instagram blog__detail-social--ins"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="">
+                                    <img class="img-fluid blog__detail-head--image" src="{% static '/img/blog_detail-2.png' %}"
+                                        alt="image">
+                                    <div class="">
+                                        <p class="blog__detail-head--desc blog__detail-head--desc---m">Millions of children worldwide face daily hunger, lacking access to nutritious food, which severely impacts their health, growth, and learning. This crisis demands urgent attention and sustainable solutions, as no child should suffer from preventable hunger in a world with enough resources to feed everyone.
+                                        </p>
+                                        <p class="blog__detail-head--desc">This crisis, driven by poverty, conflict, and inequality, requires urgent action to ensure every child has access to nutritious food. Hunger impairs learning and development, trapping families in cycles of poverty, and is preventable through sustainable interventions. Addressing child hunger not only alleviates immediate suffering but also builds healthier, more productive communities. Together, we can prioritize child nutrition through policies, community programs, and support, giving children a chance to thrive.
+                                            editors now.
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <h2 class="global__heading blog__detail-head--heading---small">Help the helpless
+                                            who need you.</h2>
+                                        <div class="">
+                                            <p class="blog__detail-head--desc blog__detail-head--desc---m">Helping those in need is not only a moral duty but a step toward building a compassionate and just society. Many people struggle with basic necessities like food, shelter, and healthcare. By reaching out, whether through direct aid, support for community programs, or advocacy, we can uplift the most vulnerable and bring hope where it’s needed most. Small acts of kindness, when multiplied, can create lasting change, empowering individuals to overcome hardship and contribute back to society. Let’s act with empathy and a commitment to improving lives for all.
+
+                                            </p>
+                                            <p class="blog__detail-head--desc">By extending compassion and aid, we offer hope and dignity to those in need, fostering a society that values every life. Small actions, like donating, volunteering, or simply showing kindness, can make a substantial difference in their lives. Each gesture helps bridge gaps and build a more compassionate world where people feel supported. Together, we can create lasting change by uplifting those who rely on our collective support.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="blog__detail-box">
+                                        <p class="blog__detail-box--desc">“ When we provide targeted support, it empowers people to overcome barriers and work toward self-sufficiency. Creating strong support systems and connecting them with community resources makes a lasting impact, helping individuals and families rebuild their lives. This compassion-driven approach benefits society as a whole, fostering resilience, stability, and hope. By actively participating in support efforts—whether through advocacy, donations, or volunteering—we contribute to a world where everyone has a fair chance at a better future. ”
+                                        </p>
+                                    </div>
+                                    <div class="">
+                                        <p class="blog__detail-head--desc blog__detail-head--desc---m">Beyond immediate aid, ensuring the helpless receive adequate help also means addressing root causes like poverty, inequality, and lack of access to opportunities. Sustainable support can include job training, education programs, mental health resources, and housing assistance, all of which contribute to long-term independence and dignity. Partnerships with organizations, local governments, and community leaders can help scale these efforts and create a network that reaches more people. The more we invest in comprehensive support, the closer we move toward a world where no one is left behind, and where everyone can build a secure, hopeful life.
+
+                                        </p>
+                                        <p class="blog__detail-head--desc">Sending children to school and equipping them with school supplies and healthcare creates a foundation for a brighter future. Education empowers children, opening doors to knowledge, critical thinking, and better job opportunities. Providing essentials like uniforms, books, and learning materials removes barriers that many children face, allowing them to focus on learning rather than worrying about basic needs. Alongside education, regular healthcare is crucial; healthy children learn better and have a greater chance of thriving in school and beyond. By investing in both education and health, we support children in reaching their full potential, creating stronger, more prosperous communities.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <!-- Blog_Deetail Social Bottom -->
+                                <div class="blog__detail-social">
+                                    <p class="blog__detail-social--para">Like this article? Spread the word</p>
+                                    <ul class="d-flex gap-4 pb-4">
+                                        <li class="m-0">
+                                            <a href="#">
+                                                <img class="img-fluid" src="{% static '/img/share-icon.svg' %}" alt="icon">
+                                            </a>
+                                        </li>
+                                        <li class="m-0">
+                                            <a href="https://www.facebook.com/">
+                                                <i class="fa-brands fa-facebook-f blog__detail-social--f"></i>
+                                            </a>
+                                        </li>
+                                        <li class="m-0">
+                                            <a href="https://twitter.com/">
+                                                <i class="fa-brands fa-twitter blog__detail-social--tw"></i>
+                                            </a>
+                                        </li>
+                                        <li class="m-0">
+                                            <a href="https://linkedin.com/">
+                                                <i class="fa-brands fa-linkedin-in blog__detail-social--in"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Blog_Detail END -->
+
+    <!--  Join_US START -->
+
+    <div class="join">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="card join__card">
+                    <img src="{% static '/img/BG-Element.png' %}" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volenteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and
+                                future
+                            </h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Join_US END -->
+
+    {% endblock content %}
+
+    

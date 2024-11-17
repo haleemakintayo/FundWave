@@ -1,0 +1,110 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- GoUp START -->
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+    <!-- GoUp END -->
+
+    
+
+    <!--  Banner START -->
+
+    <div class="banner">
+        <div class="banner__overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-lg-start">
+                        <h1 class="global__title global__title-dark text-capitalize">Gallery</h1>
+                        <ul class="banner__ul">
+                            <li class="banner__ul-list p-0">
+                                <a class="banner__ul-link" href="{% url 'home' %}">
+                                    home
+                                </a>
+                            </li>
+                            <li class="banner__ul-list">
+                                gallery
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="banner__element d-none d-lg-block">
+                    <img src="{% static '/img/element-3.svg' %}" alt="image">
+                </div>
+                <div class="banner__polygon d-none d-lg-block">
+                    <img src="{% static '/img/polygon.svg' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Banner END -->
+
+    <!--  Gallery START -->
+
+    <div class="gallery global__py pt-0">
+        <div class="container">
+            <div class="row">
+                <div class="gallery__body">
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-1.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-1.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-2.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-2.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-3.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-3.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-4.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-4.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-5.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-5.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-6.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-6.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-7.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-7.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-8.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-8.png' %}" alt="image">
+                    </a>
+                    <a class="gallery__body-layer" data-gall="gallery01" href="/img/gallery-9.png">
+                        <img class="img-fluid" src="{% static '/img/gallery-9.png' %}" alt="image">
+                    </a>
+                </div>
+                <div class="col-12 text-center">
+                    <button class="gallery__btn">see more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Gallery END -->
+
+    <!--  Join_US START -->
+
+    <div class="join">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="card join__card">
+                    <img src="{% static '/img/BG-Element.png' %}" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volenteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and
+                                future
+                            </h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Join_US END -->
+
+    {% endblock content %}

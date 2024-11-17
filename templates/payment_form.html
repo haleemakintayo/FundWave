@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1 style="text-align: center; font-family: Arial, sans-serif; color: #333; margin-bottom: 20px;">Make a Payment</h1>
+    <form method="POST" style="max-width: 500px; margin: 0 auto; background: #f7f7f7; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: Arial, sans-serif;">
+        {% csrf_token %}
+        
+        <label for="connection_mode" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Mode:</label>
+        <select name="connection_mode" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+            <option value="Test">Test</option>
+            <option value="Live">Live</option>
+        </select>
+        
+        <label for="checkout_amount" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Amount:</label>
+        <input type="number" name="checkout_amount" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <label for="currency_code" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Currency:</label>
+        <select name="currency_code" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+            <option value="NGN">NGN</option>
+            <option value="USD">USD</option>
+        </select>
+        
+        <label for="email_address" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Email:</label>
+        <input type="email" name="email_address" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <label for="first_name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">First Name:</label>
+        <input type="text" name="first_name" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <label for="last_name" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Last Name:</label>
+        <input type="text" name="last_name" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <label for="phone_number" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Phone Number:</label>
+        <input type="tel" name="phone_number" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <label for="transaction_reference" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Transaction Reference:</label>
+        <input type="text" name="transaction_reference" value="txn-{{ uuid.uuid4 }}" required style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <!-- Optional fields -->
+        <label for="pnr" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">PNR:</label>
+        <input type="text" name="pnr" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <label for="ticket_number" style="display: block; margin-bottom: 8px; font-weight: bold; color: #555;">Ticket Number:</label>
+        <input type="text" name="ticket_number" style="width: 100%; padding: 10px; margin-bottom: 20px; border: 1px solid #ccc; border-radius: 4px; font-size: 14px;">
+        
+        <button type="submit" style="width: 100%; padding: 12px; background-color: green; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">
+            Proceed to Pay
+        </button>
+    </form>
+{% endblock %}

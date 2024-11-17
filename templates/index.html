@@ -1,0 +1,645 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- Hero START -->
+    <header class="hero">
+        <div class="container p-sm-0">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-md-7 col-lg-6">
+                    <h1 class="global__title global__title-dark">Fundraising for the people and cause
+                        you care</h1>
+                    <p class="global__desc">We provide a trusted donation channel for peoples of worldwide to support
+                        people and organizers.
+                        Crowdfunding is a way
+                        to raise money for an individual or organization by collecting donations through strangers and
+                        more.</p>
+                    <a href="{% url 'donate' %}" class="global__btn">Get Started
+                        <i class="fa-solid fa-arrow-up-long global__btn-arrow"></i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-5 p-0 text-end d-none d-md-block position-relative">
+                    <img class="img-fluid" src="{% static 'img/header-img.png' %}" alt="image">
+                    <div class="hero__hand">
+                        <img class="img-fluid" src="{% static 'img/hand-fist.png' %}" alt="hand image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Hero END -->
+
+    <!-- Cases START -->
+    <div class="cases global__py pb-5">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-6 text-center m-auto" data-aos="fade-down" data-aos-duration="1000">
+                    <h3 class="global__text">Our cases</h3>
+                    <h2 class="global__heading">
+                        Popular causes what you should know
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="cases__slider">
+                    {% for case in cases %}
+                    <div class="card cases__card">
+                        <div class="cases__card-img">
+                            <a href="{% url 'home'  %}">
+                                <img class="img-fluid w-100" src="{{ case.image.url }}" alt="image">
+                            </a>
+                            <h4 class="cases__card-tag">{{ case.category }}</h4>
+                        </div>
+                        <div class="card-body px-4">
+                            <div class="d-flex">
+                                <img class="cases__card-i" src="{% static 'img/location.svg' %}" alt="icon">
+                                <span class="cases__card-location">{{ case.location }}</span>
+                            </div>
+                            <div class="">
+                                <a href="{{ case.get_absolute_url }}" class="cases__card-title">{{ case.title }}</a>
+                            </div>
+                            <div class="cases__card-range">
+                                <p class="global__desc m-0">Raised: {{ case.progress_percentage|floatformat:2 }}%</p>
+                                <div class="progress cases__card-progress">
+                                    <div class="progress-bar cases__card-progress--bar" role="progressbar"
+                                         style="width: {{ case.progress_percentage }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                    </div>
+                                </div>
+                                <div class="cases__card-range--bottom">
+                                    <div class="d-flex align-items-center cases__card-range--bottom---m gap-2">
+                                        <img class="cases__card-range--dollar" src="{% static 'img/box.svg' %}" alt="icon">
+                                        <span class="cases__card-range--price">Raised: ₦{{ case.raised_amount }}</span>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <img class="cases__card-range--dollar" src="{% static 'img/dollar-s.svg' %}" alt="icon">
+                                        <span class="cases__card-range--price">Goal: ₦{{ case.goal_amount }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Cases END -->
+
+    <!-- About START -->
+    <div class="about global__py">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-6 my-auto my-xl-0">
+                    <div class="d-none d-lg-flex gap-4" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="about__image">
+                            <img class="img-fluid" src="{% static 'img/add-1.png' %}" alt="image">
+                        </div>
+                        <div class="about__image">
+                            <img class="img-fluid" src="{% static 'img/add-2.png' %}" alt="image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-9 col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <h2 class="about__heading global__heading">
+                        We are the Powerful, Free Fundraising Platform
+                    </h2>
+                    <p class="about__desc global__desc mb-3">Amet, consectetur adipiscing elit. Etiam eu turpis
+                        molestie,
+                        dictum est
+                        a, mattis tellus. Sed dignissim, metus nec
+                        fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus.
+                        Maecenas eget condimentum velit,
+                        sit amet feugiat risus sem sollicitudin lectus.</p>
+                    <p class="about__desc global__desc m-0">Consectetur adipiscing elit. Etiam eu turpis molestie,
+                        dictum
+                        est a,
+                        mattis tellus. Sed dignissim, metus nec fringilla
+                        accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget
+                        condimentum.</p>
+                    <div class="">
+                        <ul class="about__list">
+                            <li>
+                                <img class="cases__card-range--dollar p-1 me-2" src="{% static 'img/check.svg' %}" alt="icon">
+                                <span class="global__desc m-0">
+                                    Start your campaigns
+                                </span>
+                            </li>
+                            <li>
+                                <img class="cases__card-range--dollar p-1 me-2" src="{% static 'img/check.svg' %}" alt="icon">
+                                <span class="global__desc m-0">
+                                    Share with friends
+                                </span>
+                            </li>
+                            <li>
+                                <img class="cases__card-range--dollar p-1 me-2" src="{% static 'img/check.svg' %}" alt="icon">
+                                <span class="global__desc m-0">
+                                    Manage Donations
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- About END -->
+
+    <!-- Service START -->
+    <div class="service global__py pt-0">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-6 text-center m-auto service__m" data-aos="fade-down"
+                    data-aos-duration="1000">
+                    <h2 class="global__heading m-0">Our Features Services
+                    </h2>
+                    <p class="about__desc global__desc mt-3 mb-0">We believe that we can save more life with you.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 pe-md-4">
+                    <div class="service__card service__card-linear" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="global__icon service__card-icon">
+                            <img src="{% static 'img/donation.svg' %}" alt="image" style="height: 32px; width: 32px;">
+                        </div>
+                        <div class="">
+                            <h3 class="service__card-heading global__heading">Give Donation</h3>
+                            <p class="service__card-desc global__desc mt-3 mb-0">The evidence is clear. The ability to
+                                learn to
+                                read is single significant factor potential. Became a volunteer people
+                                and the community.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 ps-md-4">
+                    <div class="service__card service__card-linear mb-0" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="global__icon service__card-icon">
+                            <img src="{% static 'img/hands-2.svg' %}" alt="image" style="height: 32px; width: 32px;">
+                        </div>
+
+                        <div class="">
+                            <h3 class="service__card-heading global__heading">Become Volunteer</h3>
+                            <p class="service__card-desc global__desc mt-3 mb-0">The evidence is clear. The ability to
+                                learn to
+                                read is single significant factor potential. Became a volunteer people
+                                and the community.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service END -->
+
+    <!-- Org START -->
+    <div class="org global__py pt-0">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-7 text-center m-auto service__m" data-aos="fade-down"
+                    data-aos-duration="1000">
+                    <h2 class="global__heading m-0">The mission and org of our organization.
+                    </h2>
+                    <p class="org__desc global__desc mt-3 mb-0">We provide a trusted platform for peoples of worldwide
+                        to support people and organizers.</p>
+                </div>
+            </div>
+            <div class="row align-items-xl-center">
+                <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                    <ul>
+                        <li class="org__li">
+                            <div class="org__li-img">
+                                <img class="org__li-img--icon" src="{% static 'img/campain.svg' %}" alt="">
+                            </div>
+                            <div class="">
+                                <h3 class="org__li-name">Manage your campaigns</h3>
+                                <p class="org__desc global__desc mt-2 mb-0">Track how many people signed the petition
+                                    by week, month, year.</p>
+                            </div>
+                        </li>
+                        <li class="org__li">
+                            <div class="org__li-img">
+                                <img class="org__li-img--icon" src="{% static 'img/donation.svg' %}" alt="">
+                            </div>
+                            <div class="">
+                                <h3 class="org__li-name">Collecting donation</h3>
+                                <p class="org__desc global__desc mt-2 mb-0">Campaign owners can set up to receive
+                                    donations from supporters.</p>
+                            </div>
+                        </li>
+                        <li class="org__li">
+                            <div class="org__li-img">
+                                <img class="org__li-img--icon" src="{% static 'img/money.svg' %}" alt="">
+                            </div>
+                            <div class="">
+                                <h3 class="org__li-name">Withdraw your money</h3>
+                                <p class="org__desc global__desc mt-2 mb-0">Withdraw your money to bank account or
+                                    Paypal easily with few set up.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 d-none d-sm-block mt-5 mt-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                    <img class="img-fluid" src="{% static 'img/draw-img.png' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Org END -->
+
+    <!-- Num START -->
+    <div class="num">
+        <div class="container p-sm-0">
+            <div class="num__body">
+                <div class="">
+                    <h4 class="num__body-digit"><span class="num__counter">6500</span>+</h4>
+                    <p class="num__body-text">Donation</p>
+                </div>
+                <div class="">
+                    <h4 class="num__body-digit">₦<span class="num__counter">60</span>+</h4>
+                    <p class="num__body-text">Found Raised</p>
+                </div>
+                <div class="">
+                    <h4 class="num__body-digit"><span class="num__counter">250</span> </h4>
+                    <p class="num__body-text">Volunteer</p>
+                </div>
+                <div class="">
+                    <h4 class="num__body-digit"><span class="num__counter">110</span></h4>
+                    <p class="num__body-text">project</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Num END -->
+
+    <!-- Testimonial START -->
+    <div class="testimonial">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-6 text-center m-auto" data-aos="fade-down" data-aos-duration="1000">
+                    <h3 class="global__text">Testimonials</h3>
+                    <h2 class="global__heading">What people say's about us
+                    </h2>
+                </div>
+            </div>
+
+            <div class="testimonial__body">
+                <div class="testimonial__body-slider">
+                   <div class="">
+                        <div class="testimonial__card">
+                            <div class="">
+                                <ul class="testimonial__card-ul">
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="">
+                                <p class="global__desc testimonial__card-desc">When I was faced with my school payments,
+                                    I turned to Fundwave. Their platform provided me with the tools and support I needed
+                                    to raise the funds to finish up my schooling. I'm so thankful for the generosity of
+                                    my supporters.</p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid" src="{% static '/img/client-1.png' %}" alt="user">
+                                    <div class="ps-3">
+                                        <h4 class="testimonial__card-name">Priscilla Lucas</h4>
+                                        <span class="testimonial__card-type">
+                                            Client
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="testimonial__card">
+                            <div class="">
+                                <ul class="testimonial__card-ul">
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="">
+                                <p class="testimonial__card-desc global__desc">Fundwave was a lifesaver. I was able to
+                                    share my story with a wide audience and raise the funds I needed for my health. The
+                                    process was smooth and efficient, and I'm so grateful for the opportunity to use
+                                    their platform.</p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid" src="{% static '/img/client-2.png' %}" alt="user">
+                                    <div class="ps-3">
+                                        <h4 class="testimonial__card-name">Dianne Russell</h4>
+                                        <span class="testimonial__card-type">
+                                            Client
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="testimonial__card">
+                            <div class="">
+                                <ul class="testimonial__card-ul">
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="">
+                                <p class="global__desc testimonial__card-desc">Fundwave's social sharing features were a
+                                    game-changer. I was able to reach a wider audience and generate more buzz around my
+                                    campaign. I'm so grateful for their platform and the support of my community.</p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid" src="{% static '/img/client-1.png' %}" alt="user">
+                                    <div class="ps-3">
+                                        <h4 class="testimonial__card-name">Priscilla Lucas</h4>
+                                        <span class="testimonial__card-type">
+                                            Client
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="testimonial__card">
+                            <div class="">
+                                <ul class="testimonial__card-ul">
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                    <li><i class="fa-solid fa-star"></i></li>
+                                </ul>
+                            </div>
+
+                            <div class="">
+                                <p class="testimonial__card-desc global__desc">Campoal is great for people to
+                                    bring
+                                    changes to what
+                                    they believe in, it’s nice to see
+                                    some good morals and common sense
+                                    being acknowledge where modern governments etc fail.</p>
+                                <div class="d-flex align-items-center">
+                                    <img class="img-fluid" src="{% static '/img/client-2.png' %}" alt="user">
+                                    <div class="ps-3">
+                                        <h4 class="testimonial__card-name">Dianne Russell</h4>
+                                        <span class="testimonial__card-type">
+                                            Founder
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial END -->
+
+    <!-- Team START-->
+    <div class="team global__py">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-6 text-center m-auto" data-aos="fade-down" data-aos-duration="1000">
+                    <h3 class="global__text">our team</h3>
+                    <h2 class="global__heading">Our Expert Volunteer
+                    </h2>
+                </div>
+            </div>
+
+            <div class="team__grid">
+                <!-- User 01 -->
+                <div class="team__card">
+                    <div class="team__card-head">
+                        <img class="img-fluid" src="{% static '/img/img-sam.jpg' %}" alt="user image">
+                        <div class="team__card-head--social">
+                            <ul class="">
+                                <li><a class="team__card-head--link" href="https://www.facebook.com/"><i
+                                            class="fa-brands fa-facebook"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://linkedin.com/"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://www.instagram.com/"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://twitter.com/"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="">
+                        <a href="#" class="team__user">Daramola Samuel</a>
+                        <p class="team__cate">Volunteer</p>
+                    </div>
+                </div>
+                <!-- User 02 -->
+                <div class="team__card">
+                    <div class="team__card-head">
+                        <img class="img-fluid" src="{% static '/img/img-halem.jpg' %}" alt="user image">
+                        <div class="team__card-head--social">
+                            <ul class="">
+                                <li><a class="team__card-head--link" href="https://www.facebook.com/"><i
+                                            class="fa-brands fa-facebook"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://linkedin.com/"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://www.instagram.com/"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://twitter.com/"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="">
+                        <a href="#" class="team__user">Akintayo Haleem </a>
+                        <p class="team__cate">Volunteer</p>
+                    </div>
+                </div>
+                <!-- User 03 -->
+                <div class="team__card">
+                    <div class="team__card-head">
+                        <img class="img-fluid" src="{% static '/img/img-moyo.jpg' %}" alt="user image">
+                        <div class="team__card-head--social">
+                            <ul class="">
+                                <li><a class="team__card-head--link" href="https://www.facebook.com/"><i
+                                            class="fa-brands fa-facebook"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://linkedin.com/"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://www.instagram.com/"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li><a class="team__card-head--link" href="https://twitter.com/"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="">
+                        <a href="#" class="team__user">Akinyemi Francis </a>
+                        <p class="team__cate">Volunteer</p>
+                    </div>
+                </div>
+                <!-- User 04 -->
+                
+            </div>
+        </div>
+    </div>
+    <!-- Team END -->
+
+    <!-- Blog START -->
+    <div class="blog global__py pt-0">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="col-12 col-md-9 col-lg-6 text-center m-auto" data-aos="fade-down" data-aos-duration="1000">
+                    <h3 class="global__text">our blog</h3>
+                    <h2 class="global__heading">Checkout latest news
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="testimonial__body blog__body">
+                    <div class="blog__body-slider">
+                        <div class="card blog__card">
+                            <a href="{% url 'blog' %}">
+                                <img class="img-fluid w-100" src="{% static '/img/img-4.png' %}" alt="image">
+                            </a>
+                            <div class="card-body px-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="">
+                                        <span class="blog__card-span">Donation</span>
+                                    </div>
+                                    <hr class="blog__card-line">
+                                    <div class="">
+                                        <span class="blog__card-span">November 15, 2024</span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <a href="{% url 'blog' %}" class="blog__title">Volunteer Training and
+                                        Development</a>
+                                    <p class="global__desc blog__desc"> Fund training programs to equip volunteers with
+                                        the skills and knowledge needed to effectively serve their communities, Provide
+                                        essential equipment and supplies to volunteers, such as tools, safety gear, and
+                                        first-aid kits.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card blog__card">
+                            <a href="{% url 'blog' %}">
+                                <img class="img-fluid w-100" src="{% static '/img/img-5.png' %}" alt="image">
+                            </a>
+                            <div class="card-body px-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="">
+                                        <span class="blog__card-span">Donation</span>
+                                    </div>
+                                    <hr class="blog__card-line">
+                                    <div class="">
+                                        <span class="blog__card-span">November 05, 2024</span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <a href="{% url 'blog' %}" class="blog__title">Food Security Initiatives &
+                                        Medication Access</a>
+                                    <p class="global__desc blog__desc">Fund programs that address food insecurity, such
+                                        as community gardens, urban farming projects, and food banks, programs that
+                                        provide affordable medications to individuals in need, especially those with
+                                        chronic illnesses.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card blog__card">
+                            <a href="{% url 'blog' %}">
+                                <img class="img-fluid w-100" src="{% static '/img/img-6.png' %}" alt="image">
+                            </a>
+                            <div class="card-body px-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="">
+                                        <span class="blog__card-span">Donation</span>
+                                    </div>
+                                    <hr class="blog__card-line">
+                                    <div class="">
+                                        <span class="blog__card-span">November 15, 2024</span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <a href="{% url 'blog' %}" class="blog__title">Creative Projects</a>
+                                    <p class="global__desc blog__desc">Artists, musicians, filmmakers, and other
+                                        creative individuals can use crowdfunding to fund their projects, allowing them
+                                        to share their work with the world.Support global health organizations working to improve health outcomes worldwide, fund projects that address food insecurity.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card blog__card">
+                            <a href="{% url 'blog' %}">
+                                <img class="img-fluid w-100" src="{% static '/img/img-5.png' %}" alt="image">
+                            </a>
+                            <div class="card-body px-4">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <div class="">
+                                        <span class="blog__card-span">Donation</span>
+                                    </div>
+                                    <hr class="blog__card-line">
+                                    <div class="">
+                                        <span class="blog__card-span">November 05, 2024</span>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <a href="{% url 'blog' %}" class="blog__title">Food Security Initiatives &
+                                        Medication Access</a>
+                                    <p class="global__desc blog__desc">Fund programs that address food insecurity, such
+                                        as community gardens, urban farming projects, and food banks, programs that
+                                        provide affordable medications to individuals in need, especially those with
+                                        chronic illnesses.</p>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog END -->
+
+    <!-- Join_US START -->
+    <div class="join">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="card join__card">
+                    <img src="{% static 'img/BG-Element.png' %}" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volenteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and
+                                future
+                            </h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--J oin_US END -->
+
+    {% endblock content %}

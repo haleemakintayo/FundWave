@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="container my-5">
+    <div class="row">
+        <!-- Contact Form Section -->
+        <div class="col-md-6 px-5">
+            <form id="createCaseForm" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label" for="title">Title</label>
+                    <input class="form-control" id="title" name="title" type="text" placeholder="Title" required />
+                    <div class="invalid-feedback">Title is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="category">Category</label>
+                    <input class="form-control" id="category" name="category" type="text" placeholder="Category" required />
+                    <div class="invalid-feedback">Category is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input class="form-control" id="location" name="location" type="text" placeholder="Location" required />
+                    <div class="invalid-feedback">Location is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="goal_amount">Goal Amount</label>
+                    <input class="form-control" id="goal_amount" name="goal_amount" type="number" step="100" placeholder="Goal Amount" required />
+                    <div class="invalid-feedback">Goal Amount is required.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label" for="fundingType">Funding Type</label>
+                    <select class="form-select" id="fundingType" name="funding_type" aria-label="Funding Type">
+                        <option value="All or Nothing">All or Nothing</option>
+                        <option value="Keep What You Raise">Keep What You Raise</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description" placeholder="Description" style="height: 10rem;" required></textarea>
+                    <div class="invalid-feedback">Description is required.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="image">Upload Image</label>
+                    <input class="form-control" id="image" name="image" type="file" accept="image/*" />
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+
+        <!-- Join Section -->
+        <div class="col-md-6">
+            <div class="join">
+                <div class="card join__card">
+                    <img src="{% static 'img/BG-Element.png' %}" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volunteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and future</h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+{% endblock %}

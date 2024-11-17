@@ -1,0 +1,327 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- GoUp START -->
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+    <!-- GoUp END -->
+
+
+
+    <!--  Banner START -->
+
+    <div class="banner">
+        <div class="banner__overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-lg-start">
+                        <h1 class="global__title global__title-dark text-capitalize">blog</h1>
+                        <ul class="banner__ul">
+                            <li class="banner__ul-list p-0">
+                                <a class="banner__ul-link" href="{% url 'home' %}">
+                                    home
+                                </a>
+                            </li>
+                            <li class="banner__ul-list">
+                                blog
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="banner__element d-none d-lg-block">
+                    <img src="{% static '/img/element-3.svg' %}" alt="image">
+                </div>
+                <div class="banner__polygon d-none d-lg-block">
+                    <img src="{% static '/img/polygon.svg' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Banner END -->
+
+    <!--  Blog START -->
+
+    <div class="blog global__py pt-0">
+        <div class="container p-sm-0">
+            <div class="blog__grid">
+                <div class="card blog__card text-start m-0" data-aos="fade-down" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-4.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 09, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Volunteer Training and Development</a>
+                            <p class="global__desc blog__desc"> Fund training programs to equip volunteers with the skills and knowledge needed to effectively serve their communities, Provide essential equipment and supplies to volunteers, such as tools, safety gear, and first-aid kits.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-down" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-5.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 05, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Food Security Initiatives & Medication Access</a>
+                            <p class="global__desc blog__desc">Fund programs that address food insecurity, such as community gardens, urban farming projects, and food banks, programs that provide affordable medications to individuals in need, especially those with chronic illnesses.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-down" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-6.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 15, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Creative Projects</a>
+                            <p class="global__desc blog__desc">Artists, musicians, filmmakers, and other creative individuals can use crowdfunding to fund their projects, allowing them to share their work with the world.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-left" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-13.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 11, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Emergency Food Relief</a>
+                            <p class="global__desc blog__desc"> Support organizations that provide food aid to refugees, displaced persons, and those affected by conflict, Support programs that educate communities about healthy eating habits and nutrition.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-left" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-14.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 10, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Research and Development & Social Justice Causes</a>
+                            <p class="global__desc blog__desc"> Support scientific research, medical breakthroughs, and technological advancements, Fund organizations working to promote equality, human rights, and social justice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-left" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-15.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 13, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Clothing Drives and Donations</a>
+                            <p class="global__desc blog__desc">Fund clothing drives and donation programs to provide clothing to people in need, Provide school uniforms to children from low-income families, ensuring equal access to education.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-right" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-16.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 07, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Clothing for Refugees & Clothing for Disaster Victims</a>
+                            <p class="global__desc blog__desc">Fund the provision of clothing to refugees and displaced persons, Provide clothing to people affected by natural disasters.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-right" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-17.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 14, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Shelter and Housing & Mental Health Services</a>
+                            <p class="global__desc blog__desc">Fund the construction and operation of homeless shelters and transitional housing programs, Support mental health counseling and therapy for homeless individuals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-right" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-101.jpg' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 08, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Childhood Diseases & Genetic Research</a>
+                            <p class="global__desc blog__desc">Support research into the causes, prevention, and treatment of childhood diseases, Support research into genetic disorders and their impact on children's health.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-102.jpg' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 09, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Educational Expenses</a>
+                            <p class="global__desc blog__desc">Helping students fund their education, whether it's for tuition, books, or living expenses. This is particularly useful for those from disadvantaged backgrounds or facing financial hardship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-13.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 16, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Nutrition Education & Food Waste Reduction</a>
+                            <p class="global__desc blog__desc">Support programs that educate communities about healthy eating habits and nutrition, initiatives that reduce food waste and promote food conservation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card blog__card text-start m-0" data-aos="fade-up" data-aos-duration="1000">
+                    <a href="{% url 'blog' %}">
+                        <img class="img-fluid w-100" src="{% static '/img/img-19.png' %}" alt="image">
+                    </a>
+                    <div class="card-body px-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="">
+                                <span class="blog__card-span">Donation</span>
+                            </div>
+                            <hr class="blog__card-line">
+                            <div class="">
+                                <span class="blog__card-span">November 04, 2024</span>
+                            </div>
+                        </div>
+                        <div class="">
+                            <a href="{% url 'blog' %}" class="blog__title">Medical Tourism and The Best Way to Fund It</a>
+                            <p class="global__desc blog__desc">consectetur adipisicing elit,
+                                sed
+                                do
+                                eiusmod tempor
+                                incididunt ut labore et dolore
+                                magna aliqua. Ut enim ad minim
+                                veniam.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 text-center">
+                <button class="blog__btn">see more</button>
+            </div>
+        </div>
+    </div>
+
+    <!--  Blog END -->
+
+    <!--  Join_US START -->
+
+    <div class="join">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="card join__card">
+                    <img src="{% static '/img/BG-Element.png' %}" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volenteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and
+                                future
+                            </h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Join_US END -->
+
+    {% endblock content %}

@@ -1,0 +1,312 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- GoUp START -->
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+    <!-- GoUp END -->
+
+    
+    <!--  Banner START -->
+
+    <div class="banner">
+        <div class="banner__overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-lg-start">
+                        <h1 class="global__title global__title-dark text-uppercase">faqs</h1>
+                        <ul class="banner__ul">
+                            <li class="banner__ul-list p-0">
+                                <a class="banner__ul-link" href="index.html">
+                                    home
+                                </a>
+                            </li>
+                            <li class="banner__ul-list text-uppercase">
+                                faqs
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="banner__element d-none d-lg-block">
+                    <img src="{% static '/img/element-3.svg' %}" alt="image">
+                </div>
+                <div class="banner__polygon d-none d-lg-block">
+                    <img src="{% static '/img/polygon.svg' %}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Banner END -->
+
+    <!-- Faqs START -->
+
+    <div class="faq">
+        <div class="row bg-white m-0">
+            <div class="col-12 col-md-9 col-lg-6 text-center m-auto">
+                <h3 class="global__text">Do you need help?</h3>
+                <h2 class="global__heading">We answers to all you daily questions
+                </h2>
+            </div>
+        </div>
+        <div class="container p-sm-0">
+            <div class="row px-3 px-sm-0">
+                <div class="faq__body d-lg-flex">
+                    <div class="col-lg-6 pe-lg-3 mb-4 mb-lg-0" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="col-lg-12 pe-lg-3 mb-4 mb-lg-0 ">
+                            <div class="accordion faq__body-accordion" id="accodionLeft">
+                                <!-- Accordion 01 -->
+                                <div class="accordion-item faq__body-accordion--bg">
+                                    <div class="d-flex align-items-center" id="headingOne">
+                                        <div class="col-12">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                                aria-expanded="false" aria-controls="collapseOne">
+                                                <span class="col-10">
+                                                    What happens when a fundraising goal is reached?
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                        data-bs-parent="#accodionLeft">
+                                        <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a,
+                                            mattis
+                                            tellus.dignissim, metus nec
+                                            fringilla accumsan, risus semlacus, ut
+                                            interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 02 -->
+                                <div class="accordion-item faq__body-accordion--bg">
+                                    <div class="d-flex align-items-center" id="headingTwo">
+                                        <div class="col-12">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                aria-expanded="false" aria-controls="collapseTwo">
+                                                <span class="col-10">
+                                                    How do I choose which projects to support?
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                        data-bs-parent="#accodionLeft">
+                                        <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a,
+                                            mattis
+                                            tellus.dignissim, metus nec
+                                            fringilla accumsan, risus semlacus, ut
+                                            interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 03 -->
+                                <div class="accordion-item faq__body-accordion--bg">
+                                    <div class="d-flex align-items-center" id="headingThree">
+                                        <div class="col-12">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                aria-expanded="false" aria-controls="collapseThree">
+                                                <span class="col-10">
+                                                    How do I choose which projects to support?
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                        data-bs-parent="#accodionLeft">
+                                        <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a,
+                                            mattis
+                                            tellus.dignissim, metus nec
+                                            fringilla accumsan, risus semlacus, ut
+                                            interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                    </div>
+                                </div>
+                                <!-- Accordion 04 -->
+                                <div class="accordion-item faq__body-accordion--bg">
+                                    <div class="d-flex align-items-center" id="headingFour">
+                                        <div class="col-12">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                                aria-expanded="true" aria-controls="collapseFour">
+                                                <span class="col-10">
+                                                    How do I choose which projects to support?
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour"
+                                        data-bs-parent="#accodionLeft">
+                                        <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a,
+                                            mattis
+                                            tellus.dignissim, metus nec
+                                            fringilla accumsan, risus semlacus, ut
+                                            interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                    </div>
+                                </div>
+                                <!-- Accodion 05 -->
+                                <div class="accordion-item faq__body-accordion--bg">
+                                    <div class="d-flex align-items-center" id="headingFive">
+                                        <div class="col-12">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                                aria-expanded="false" aria-controls="collapseFive">
+                                                <span class="col-10">
+                                                    How do I choose which projects to support?
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive"
+                                        data-bs-parent="#accodionLeft">
+                                        <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a,
+                                            mattis
+                                            tellus.dignissim, metus nec
+                                            fringilla accumsan, risus semlacus, ut
+                                            interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ps-lg-3" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="accordion faq__body-accordion" id="accodionRight">
+                            <!-- Accodion 06 -->
+                            <div class="accordion-item faq__body-accordion--bg">
+                                <div class="d-flex align-items-center" id="headingSix">
+                                    <div class="col-12">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true"
+                                            aria-controls="collapseSix">
+                                            <span class="col-10">
+                                                What happens when a fundraising goal is reached?
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix"
+                                    data-bs-parent="#accodionRight">
+                                    <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a, mattis
+                                        tellus.dignissim, metus nec
+                                        fringilla accumsan, risus semlacus, ut
+                                        interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                </div>
+                            </div>
+                            <!-- Accodion 07 -->
+                            <div class="accordion-item faq__body-accordion--bg">
+                                <div class="d-flex align-items-center" id="headingSaven">
+                                    <div class="col-12">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseSaven"
+                                            aria-expanded="false" aria-controls="collapseSaven">
+                                            <span class="col-10">
+                                                How do I choose which projects to support?
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="collapseSaven" class="collapse" aria-labelledby="headingSaven"
+                                    data-bs-parent="#accodionRight">
+                                    <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a, mattis
+                                        tellus.dignissim, metus nec
+                                        fringilla accumsan, risus semlacus, ut
+                                        interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                </div>
+                            </div>
+                            <!-- Accodion 08 -->
+                            <div class="accordion-item faq__body-accordion--bg">
+                                <div class="d-flex align-items-center" id="headingEight">
+                                    <div class="col-12">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseEight"
+                                            aria-expanded="false" aria-controls="collapseEight">
+                                            <span class="col-10">
+                                                Tell me about he donation feed on my crowdfund page
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="collapseEight" class="collapse" aria-labelledby="headingEight"
+                                    data-bs-parent="#accodionRight">
+                                    <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a, mattis
+                                        tellus.dignissim, metus nec
+                                        fringilla accumsan, risus semlacus, ut
+                                        interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                </div>
+                            </div>
+                            <!-- Accodion 09 -->
+                            <div class="accordion-item faq__body-accordion--bg">
+                                <div class="d-flex align-items-center" id="headingNine">
+                                    <div class="col-12">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseNine"
+                                            aria-expanded="false" aria-controls="collapseNine">
+                                            <span class="col-10">
+                                                Donating to a Crowdfunding campaign vs a Team?
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="collapseNine" class="collapse" aria-labelledby="headingNine"
+                                    data-bs-parent="#accodionRight">
+                                    <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a, mattis
+                                        tellus.dignissim, metus nec
+                                        fringilla accumsan, risus semlacus, ut
+                                        interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                </div>
+                            </div>
+                            <!-- Accodion 10 -->
+                            <div class="accordion-item faq__body-accordion--bg">
+                                <div class="d-flex align-items-center" id="headingTen">
+                                    <div class="col-12">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTen"
+                                            aria-expanded="false" aria-controls="collapseTen">
+                                            <span class="col-10">
+                                                Can default amounts be set
+                                                on team/crowdfunding?
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="collapseTen" class="collapse" aria-labelledby="headingTen"
+                                    data-bs-parent="#accodionRight">
+                                    <p class="faq__body-accordion--desc">Etiam eu turpis molestie, dictum est a, mattis
+                                        tellus.dignissim, metus nec
+                                        fringilla accumsan, risus semlacus, ut
+                                        interdum tellus elit sed risus. Maecenas eget condimentum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Faqs END -->
+
+    <!--  Join_US START -->
+
+    <div class="join">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="card join__card">
+                    <img src="{% static '/img/BG-Element.png' %}" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volenteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and
+                                future
+                            </h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Join_US END -->
+
+    {% endblock content %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %} {% load static %} {% block content%}
+<div class="sign__body">
+  <!-- SignIn START -->
+  <div class="sign mt-4 mt-sm-3 mt-lg-0">
+    <div class="sign__layer">
+      <div class="container-fluid p-0">
+        <div class="d-md-flex justify-content-between position-relative h-100">
+          <div
+            class="col-11 col-sm-10 col-md-8 col-lg-5 col-xl-4 m-auto sign__position"
+          >
+            <div class="sign__form">
+              <h5 class="sign__small d-none d-lg-block">
+                Copyright © 2024 FundWave
+              </h5>
+              <form action="{% url 'sign-in' %}" method="POST" class="">
+                {% csrf_token %}
+                <h4 class="sign__form-heading">Sign In</h4>
+                <div class="">
+                  <div class="sign__form-mb">
+                    <label class="sign__form-label" for="emailInp" id="email"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control sign__form-input"
+                      id="emailInp"
+                      type="email"
+                      name="email"
+                      placeholder="Enter your email"
+                    />
+                  </div>
+                  <div class="password-container">
+                    <label class="sign__form-label" for="passwordInp">
+                      Password <span class="text-danger">*</span>
+                    </label>
+                    <input
+                      class="form-control sign__form-input"
+                      id="passwordInp"
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      required
+                      minlength="8"
+                    />
+                  </div>
+                  <div class="col-10 col-sm-12 m-auto">
+                    <div class="" style="margin-top: 30px">
+                      <button
+                        class="sign__btn sign__btn-in form-control"
+                        type="submit"
+                      >
+                        Log in
+                      </button>
+                    </div>
+                  </div>
+                  <div class="">
+                    <p class="sign__text text-center">
+                      Don’t have an account?
+                      <a class="sign__form-link" href="{% url 'sign-up' %}">Sign up</a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="">
+              <img
+                class="sign__card-element d-none d-xxl-block"
+                src="{% static 'img/element-4.png' %}"
+                alt="image"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 d-none d-lg-block">
+            <div class="sign__slider">
+              <div class="sign__slider-item">
+                <div class="card sign__card h-100">
+                  <img
+                    class="img-fluid h-100 sign__card-img"
+                    src="{% static 'img/signIn.png' %}"
+                    alt="image"
+                  />
+                  <div class="card-img-overlay sign__card-overlay">
+                    <div class="position-relative">
+                      <h5
+                        class="global__heading global__heading-w sign__card-title"
+                      >
+                        Sign in to save and continue
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="sign__slider-item">
+                <div class="card sign__card h-100">
+                  <img
+                    class="img-fluid h-100 sign__card-img"
+                    src="{% static 'img/signUp.png' %}"
+                    alt="image"
+                  />
+                  <div class="card-img-overlay sign__card-overlay">
+                    <div class="position-relative">
+                      <h5
+                        class="global__heading global__heading-w sign__card-title"
+                      >
+                        Sign in to save and continue
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- SignIn END -->
+</div>
+{% endblock %}

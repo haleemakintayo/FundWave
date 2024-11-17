@@ -1,0 +1,75 @@
+{% load static %}
+{% extends 'base.html' %}
+{% block content %}
+
+    <!--  Banner START -->
+
+    <div class="banner">
+        <div class="banner__overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-lg-start">
+                        <h1 class="global__title global__title-dark text-capitalize">error</h1>
+                        <ul class="banner__ul">
+                            <li class="banner__ul-list p-0">
+                                <a class="banner__ul-link" href="index.html">
+                                    home
+                                </a>
+                            </li>
+                            <li class="banner__ul-list">
+                                back home
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="banner__element d-none d-lg-block">
+                    <img src="assets/img/element-3.svg" alt="image">
+                </div>
+                <div class="banner__polygon d-none d-lg-block">
+                    <img src="assets/img/polygon.svg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--  Banner END -->
+
+    <!-- Error START -->
+    <div class="error">
+        <div class="container p-sm-0">
+            <div class="row text-center">
+                <img class="img-fluid" src="assets/img/404.png" alt="404 image">
+                <div class="">
+                    <h2 class="global__heading error__m">Whoops! That page doesn’t exist.</h2>
+                    <p class="global__desc">The page you requested could not be found</p>
+                    <a href="index.html" class="global__btn text-decoration-none"><i
+                            class="fa-solid fa-arrow-left me-2"></i> Back To Homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Error END -->
+
+
+    <!--  Join_US START -->
+    <div class="join">
+        <div class="container p-sm-0">
+            <div class="row">
+                <div class="card join__card">
+                    <img src="assets/img/BG-Element.png" class="img-fluid join__card-img" alt="image">
+                    <div class="card-img-overlay join__card-layer">
+                        <div class="col-11 col-md-7">
+                            <h3 class="join__text global__text">Become a volenteer</h3>
+                            <h2 class="join__heading global__heading">Join Your hand with us for a better life and
+                                future
+                            </h2>
+                            <button class="join__card-layer--btn global__btn">Discover More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  Join_US END -->
+
+{% endblock %}

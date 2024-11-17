@@ -1,0 +1,270 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FundWave</title>
+
+    <!-- Logo -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'img/site.webmanifest' %}">
+
+    <!-- Fontawsome -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+
+  <body>
+    <!-- GoUp START -->
+    <button id="topBtn"><i class="fas fa-arrow-up"></i></button>
+    <!-- GoUp END -->
+
+    <!-- Navbar START -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white menu menu__scroll"
+    >
+      <div class="container p-sm-0">
+        <a class="navbar-brand menu__logo p-0 m-0" href="{% url 'home' %}"
+          ><img
+            class="menu__logo-img"
+            src="{% static 'img/Logo.png' %}"
+            alt="logo"
+        /></a>
+        <button
+          class="navbar-toggler menu__toggle"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav m-auto menu__list my-3 my-lg-0">
+            <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menu__list-link menu__list-link--active" href="#"
+                            id="navbarDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            home
+                        </a>
+                        <ul class="dropdown-menu menu__list-dropdown--ul overflow-hidden" aria-labelledby="navbarDrop">
+                            <li><a class="dropdown-item" href="{% url 'home' %}">home</a></li>
+                            <li><a class="dropdown-item" href="home-1.html">home one</a></li>
+                            <li><a class="dropdown-item" href="home-2.html">home two</a></li>
+                            <li><a class="dropdown-item" href="home-3.html">home three</a></li>
+                            <li><a class="dropdown-item" href="home-4.html">home Four</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link menu__list-link" href=" {% url 'home' %}" >Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu__list-link" href="{% url 'about' %}">about us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu__list-link" href="{% url 'cases' %}">cases</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle menu__list-link" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            pages
+                        </a>
+                        <ul class="dropdown-menu menu__list-dropdown--ul" aria-labelledby="navbarDropdown">
+                            
+                            <li><a class="dropdown-item" href="{% url 'payment' %}">donate</a></li>
+                            <li><a class="dropdown-item" href="{% url 'blog_detail' %}">blog details</a></li>
+                            <li><a class="dropdown-item" href="{% url 'faq' %}">faqs</a></li>
+                            <li><a class="dropdown-item" href="{% url 'gallery' %}">gallery</a></li>
+                            <li><a class="dropdown-item" href="{% url 'team' %}l">team</a></li>
+                            <li><a class="dropdown-item" href="{% url 'testimonial' %}">testimonials</a></li>
+                            <li><a class="dropdown-item" href="{% url 'volunteer' %}">volunteer</a></li>
+                            <li><a class="dropdown-item" href="{% url 'error' %}">error</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu__list-link" href="{% url 'campaign' %}">Fundraiser</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu__list-link" href="{% url 'blog' %}">blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link menu__list-link" href="{% url 'contact' %}">contact</a>
+                    </li>
+                </ul>
+                {% if user.is_authenticated %}
+                <div class="d-sm-flex d-lg-block gap-4 mt-3 mt-lg-0">
+                  <a
+                    href="{% url 'logout' %}"
+                    class="btn menu__btn menu__btn-in mb-3 mb-lg-0"
+                    >log out</a
+                  >
+                </div>
+                {% else %}
+                <div class="d-sm-flex d-lg-block gap-4 mt-3 mt-lg-0">
+                  <a
+                    href="{% url 'sign-in' %}"
+                    class="btn menu__btn menu__btn-in mb-3 mb-lg-0"
+                    >sign in</a
+                  >
+                  <a
+                    href="{% url 'sign-up' %}"
+                    class="btn menu__btn menu__btn-up mb-3 mb-lg-0"
+                    >sign up</a
+                  >
+                </div>
+                {% endif %}
+              </div>
+        </div>
+    </nav>
+    <!-- Navbar END -->
+
+    {% block content %} 
+
+    {% endblock content %}
+
+        <!-- Footer START -->
+        <div class="footer">
+            <div class="container p-sm-0">
+                <div class="row justify-content-between">
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <a href="{% url 'home' %}">
+                            <img class="img-fluid" src="{% static 'img/logo-footer.png' %}" alt="logo">
+                        </a>
+                        <p class="global__desc footer__desc"> Fundwave provides a comprehensive platform designed to streamline the management of various types of funds, including venture capital, private equity, and real estate funds.</p>
+                        <div class="footer__social">
+                            <ul class="footer__social-ul">
+                                <li>
+                                    <a class="footer__social-link" href="https://www.facebook.com/"><i
+                                            class="fa-brands fa-facebook"></i></a>
+                                </li>
+                                <li>
+                                    <a class="footer__social-link" href="https://linkedin.com/"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a class="footer__social-link" href="https://www.instagram.com/"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a class="footer__social-link" href="https://twitter.com/"><i
+                                            class="fa-brands fa-twitter"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 d-md-flex justify-content-center my-5 my-md-0">
+                        <div class="">
+                            <h4 class="footer__sub">explore</h4>
+                            <ul class="footer__list">
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'about' %}">
+                                        about us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer__list-item" href="#">
+                                        pages
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'blog' %}">
+                                        blog
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'faq' %}">
+                                        Privecy & Policy
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 col-xl-2 mb-5 mb-md-0 mt-md-5 mt-lg-0">
+                        <div class="">
+                            <h4 class="footer__sub">Donate</h4>
+                            <ul class="footer__list">
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'donate' %}">
+                                        Give Donation
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'volunteer' %}">
+                                        Become Volunteer
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'beneficiary-dashboard' %}">
+                                        Beneficiary
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="footer__list-item" href="{% url 'donate' %}">
+                                        Other Ways to Give
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-xl-4 mt-md-5 mt-xl-0">
+                        <h4 class="footer__sub">Subscribe Newsletter</h4>
+                        <p class="global__desc footer__desc">Join our newsletter to stay updated about our latest news and
+                            articles.
+                        </p>
+                        <form action="#" method="POST" class="d-flex position-relative">
+                            <input class="footer__inp form-control" type="text" placeholder="Enter your email">
+                            <button class="global__btn footer__inp-btn">subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <hr class="footer__border">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <p class="footer__bottom">Copyright © 2024 FundWave.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer END -->
+    
+        <!-- Jquery -->
+        <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+        <!-- Venobox -->
+        <script src="{% static 'js/venobox.min.js' %}"></script>
+        <!-- Counter JS -->
+        <script src="{% static 'js/waypoints.min.js' %}"></script>
+        <script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+        <!-- Slick JS -->
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <!-- Bootstrap JS -->
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <!-- Aos JS -->
+        <script src="{% static 'js/aos.js' %}"></script>
+        <!-- JS -->
+        <script src="{% static 'js/app.js' %}"></script>
+    </body>
+    
+    
+    
+    </html>

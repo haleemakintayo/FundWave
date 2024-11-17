@@ -1,0 +1,1 @@
+web: gunicorn Fundwave.wsgi:application --log-file -
